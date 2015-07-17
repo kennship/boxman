@@ -1,0 +1,3 @@
+#!/usr/bin/env node --harmony
+require('babel/register')({ ignore: /boxman\/node_modules/ });
+require('../src/cli');

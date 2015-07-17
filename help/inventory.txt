@@ -1,0 +1,11 @@
+boxman inventory [--list [--yaml] | --host]
+Displays a list of all boxes in the system. Compatible with Ansible.
+
+This command is aliased to "boxman-inventory" for Ansible.
+
+Options:
+
+  --list      Display a list of all boxes in the system.
+    --yaml    Display the list in human-friendly YAML format.
+
+  --host      Display a list of the host variables set on the given machine.

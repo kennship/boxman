@@ -1,0 +1,38 @@
+{
+  "name": "boxman",
+  "version": "0.0.0",
+  "description": "Provision and manage servers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:kennship/boxman.git"
+  },
+  "keywords": [
+    "provision",
+    "machine"
+  ],
+  "bin": {
+    "boxman": "bin/boxman",
+    "boxman-inventory": "bin/boxman-inventory"
+  },
+  "author": "Ryan Muller <ryan@kennship.com>",
+  "license": "BSD-3-Clause",
+  "homepage": "https://bitbucket.org/kennship/boxman#readme",
+  "dependencies": {
+    "chalk": "^1.1.0",
+    "co": "^4.6.0",
+    "debug": "^2.2.0",
+    "doapi": "0.0.4",
+    "haiku.js": "0.0.1",
+    "js-yaml": "^3.3.1",
+    "minimist": "^1.1.1",
+    "node-ansible": "^0.3.0",
+    "pouchdb": "^3.4.0",
+    "q-io": "^1.13.1",
+    "request": "^2.58.0",
+    "spinny": "^1.0.1"
+  }
+}
