@@ -7,7 +7,34 @@ Provision and manage servers.
 You need [Ansible](http://docs.ansible.com/intro_installation.html) installed on your system in order to use Boxman.
 
 ```
-npm install -g https://r24y@bitbucket.org/r24y/boxman.git
+npm install -g boxman
+```
+
+## Cheat sheet
+
+```
+# Create a box with some associated groups, and associates DNS.
+boxman up --groups webserver,database
+
+# List your boxes.
+boxman list
+
+# Modify a box's groups.
+# Accepts single groups, or comma-separated sets of groups.
+boxman group wispy-mountain-1315 --add caching
+boxman group wispy-mountain-1315 --remove database
+boxman group wispy-mountain-1315 --replace auth,webserver
+
+# Deploy a playbook.
+# Expects playbooks to be in `playbooks/$NAME.yml` in your Ansible directory.
+# A playbook will deploy to groups listed in "hosts" in the playbook.
+boxman deploy website
+
+# Update Ansible roles from `requirements.yml` in the Ansible directory.
+boxman role update
+
+# Destroy a particular box.
+boxman destroy wispy-mountain-1315
 ```
 
 ## Setup
