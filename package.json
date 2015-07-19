@@ -1,6 +1,6 @@
 {
   "name": "boxman",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Provision and manage servers",
   "main": "index.js",
   "scripts": {
