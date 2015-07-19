@@ -3,7 +3,7 @@ import path from 'path';
 import loadDatabase from './db';
 
 function *deploy(args) {
-  const {
+  let {
     playbook,
     config
   } = args;
