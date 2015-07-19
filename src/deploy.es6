@@ -7,7 +7,10 @@ function *deploy(args) {
     playbook,
     config
   } = args;
-  const host = args._[0];
+  playbook = playbook || args._[0];
+  if (!playbook) {
+    throw new Error('No playbook specified');
+  }
   const cmd = [
     'ansible-playbook',
     `--private-key=${config.sshKey}`,
