@@ -34,7 +34,7 @@ hostnames:
   template: '*.box'
 ```
 
-To provision a new box, run `boxman up`. To run an Ansible playbook, run `boxman deploy --playbook <my-playbook>`.
+To provision a new box, run `boxman up --groups testing` to create a new box in the "testing" group. To run an Ansible playbook, run `boxman deploy --playbook <my-playbook>`.
 
 A sample `requirements.yml` to get you going:
 
@@ -53,7 +53,7 @@ You'll also need a sample playbook. Save this under `~/.boxman/ansible/playbooks
 
 ```
 ---
-- hosts: all
+- hosts: testing
   roles:
     - role: ../roles/nginx
       nginx_sites:
@@ -66,5 +66,3 @@ You'll also need a sample playbook. Save this under `~/.boxman/ansible/playbooks
 ```
 
 Once you've saved this, run `boxman deploy --playbook test-site`. This will connect to all existing boxes (there should only be one), install nginx, configure it to show the default test page, and start the service. Hooray!
-
-Note: right now, groups don't work. So with Boxman you're currently best off managing a single box. Groups are coming soon though!

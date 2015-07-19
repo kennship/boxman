@@ -10,6 +10,7 @@ import loadDatabase from './db';
 import {getPublicKey} from './key';
 import {deploy} from './deploy';
 import {role} from './role';
+import {group} from './group';
 import sh from './promishe';
 
 const debug = require('debug')('boxman');
@@ -87,6 +88,7 @@ function mkOps() {
   return {
     up, destroy, inventory,
     deploy, role,
+    group,
     *bootstrap(args) {
       const repo = args._[0];
       const dir = args.config.ansible.directory;
@@ -141,7 +143,10 @@ Usage: boxman <command> [opts...]
 Commands:
 
   up           Provision a box
-  inventory    Display inventory of boxes
+  list         Show a plain list of boxes
+  inventory    Display Ansible-compatible inventory of boxes
+  role         Update local Ansible roles
+  group        Manage groups
   destroy      Destroy a box
 
 Use boxman <command> --help for more details about a particular command.
